@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Convert_Length_Activity">
+
+    <EditText
+        android:id="@+id/Value_One_Text_Box"
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Value_One_Spinner"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="70dp"
+        android:ems="10"
+        android:hint="Enter value to convert"
+        android:inputType="numberDecimal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:visibility="visible" />
+
+    <Spinner
+        android:id="@+id/Value_One_Spinner"
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/Value_Two_Spinner"
+        android:layout_marginTop="80dp" />
+
+    <Spinner
+        android:id="@+id/Value_Two_Spinner"
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="140dp" />
+
+    <Button
+        android:id="@+id/ConvertButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:text="Convert" />
+
+    <EditText
+        android:id="@+id/Value_Two_Text_Box"
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/Value_One_Text_Box"
+        android:layout_marginTop="130dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+</RelativeLayout>
