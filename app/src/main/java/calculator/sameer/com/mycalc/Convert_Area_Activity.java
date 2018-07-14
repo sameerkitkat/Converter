@@ -11,12 +11,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 
-public class Convert_Length_Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    public Spinner sourceSpinner,targetSpinner;
-    private EditText valueOneTextbox,valueTwoTextbox;
+public class Convert_Area_Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    public Spinner areasourceSpinner,areatargetSpinner;
+    private EditText areavalueOneTextbox,areavalueTwoTextbox;
     private double convertedValue;
-    private double valueOne,valueTwo;
-    private Button convertButton;
+    private double areavalueOne,areavalueTwo;
+    private Button areaconvertButton;
     public String sourceValue,targetValue;
     public static final String MILIMETER ="milimeters";
     public static final String CENTIMETER ="centimeters";
@@ -34,13 +34,13 @@ public class Convert_Length_Activity extends AppCompatActivity implements Adapte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_convert_length);
-        sourceSpinner = findViewById(R.id.Value_One_Spinner);
-        targetSpinner = findViewById(R.id.Value_Two_Spinner);
-        convertButton = findViewById(R.id.ConvertButton);
-        valueOneTextbox = findViewById(R.id.Value_One_Text_Box);
-        valueTwoTextbox = findViewById(R.id.Value_Two_Text_Box);
-        sourceSpinner.setOnItemSelectedListener(this);
-        targetSpinner.setOnItemSelectedListener(this);
+        areasourceSpinner = findViewById(R.id.Area_Value_One_Spinner);
+        areatargetSpinner = findViewById(R.id.Area_Value_Two_Spinner);
+        areaconvertButton = findViewById(R.id.Area_ConvertButton);
+        areavalueOneTextbox = findViewById(R.id.Area_Value_One_Text_Box);
+        areavalueTwoTextbox = findViewById(R.id.Area_Value_Two_Text_Box);
+        areasourceSpinner.setOnItemSelectedListener(this);
+        areatargetSpinner.setOnItemSelectedListener(this);
         selectSpinner();
     }
 
@@ -50,42 +50,42 @@ public class Convert_Length_Activity extends AppCompatActivity implements Adapte
         ArrayAdapter<String> targetadapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,units);
         sourceadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         targetadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sourceSpinner.setAdapter(sourceadapter);
-        targetSpinner.setAdapter(targetadapter);
+        areasourceSpinner.setAdapter(sourceadapter);
+        areatargetSpinner.setAdapter(targetadapter);
     }
 
 
     /* Call createConversion method from Converter class and set result to second text box */
-     public void convertValues(String sourceValue,String targetValue){
-         Converter conv = new Converter();
-         if( !valueOneTextbox.getText().toString().equals("") && valueOneTextbox.getText().toString().length() > 0 ) {
-             valueOne = Double.parseDouble(valueOneTextbox.getText().toString());
-         }
-         if (sourceValue.equals(targetValue)) {
-            convertedValue = valueOne;
+    public void convertValues(String sourceValue,String targetValue){
+        Converter conv = new Converter();
+        if( !areavalueOneTextbox.getText().toString().equals("") && areavalueOneTextbox.getText().toString().length() > 0 ) {
+            areavalueOne = Double.parseDouble(areavalueOneTextbox.getText().toString());
+        }
+        if (sourceValue.equals(targetValue)) {
+            convertedValue = areavalueOne;
             setResult(convertedValue);
         }
         else{
-             convertedValue=conv.createConversion(sourceValue,targetValue,valueOne);
-             setResult(convertedValue);
-         }
+            convertedValue=conv.createConversion(sourceValue,targetValue,areavalueOne);
+            setResult(convertedValue);
+        }
     }
 
     /* Set result method to display the result */
     public void setResult(final Double convertedValue){
-        convertButton.setOnClickListener(new View.OnClickListener() {
+        areaconvertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                valueTwoTextbox.setText(String.valueOf(convertedValue));
+                areavalueTwoTextbox.setText(String.valueOf(convertedValue));
             }
         });
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-        sourceValue = String.valueOf(sourceSpinner.getSelectedItem());
+        sourceValue = String.valueOf(areasourceSpinner.getSelectedItem());
         System.out.print(sourceValue);
-        targetValue = String.valueOf(targetSpinner.getSelectedItem());
+        targetValue = String.valueOf(areatargetSpinner.getSelectedItem());
         System.out.print(targetValue);
         convertValues(sourceValue, targetValue);
     }

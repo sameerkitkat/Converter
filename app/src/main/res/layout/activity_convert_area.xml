@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Convert_Length_Activity">
+    tools:context=".Convert_Area_Activity">
 
     <EditText
-        android:id="@+id/Value_One_Text_Box"
+        android:id="@+id/Area_Value_One_Text_Box"
         android:layout_width="249dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/Value_One_Spinner"
+        android:layout_alignStart="@+id/Area_Value_One_Spinner"
         android:layout_marginTop="88dp"
         android:ems="10"
         android:hint="Enter value to convert"
@@ -20,7 +20,7 @@
         android:visibility="visible" />
 
     <Spinner
-        android:id="@+id/Value_One_Spinner"
+        android:id="@+id/Area_Value_One_Spinner"
         android:layout_width="249dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -29,15 +29,15 @@
         android:layout_marginTop="50dp" />
 
     <Spinner
-        android:id="@+id/Value_Two_Spinner"
+        android:id="@+id/Area_Value_Two_Spinner"
         android:layout_width="249dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/Value_One_Text_Box"
+        android:layout_alignStart="@+id/Area_Value_One_Text_Box"
         android:layout_marginTop="150dp" />
 
     <Button
-        android:id="@+id/ConvertButton"
+        android:id="@+id/Area_ConvertButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -47,11 +47,11 @@
         android:text="Convert" />
 
     <EditText
-        android:id="@+id/Value_Two_Text_Box"
+        android:id="@+id/Area_Value_Two_Text_Box"
         android:layout_width="249dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/Value_One_Text_Box"
+        android:layout_alignStart="@+id/Area_Value_One_Text_Box"
         android:layout_marginTop="187dp"
         android:ems="10"
         android:inputType="numberDecimal"
