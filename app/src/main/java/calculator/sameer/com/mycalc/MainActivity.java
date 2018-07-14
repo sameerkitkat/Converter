@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void ConvertAreaActivity() {
         final Context context = getBaseContext();
-        LengthButton = (Button) findViewById(R.id.Area_button);
-        LengthButton.setOnClickListener(new View.OnClickListener() {
+        AreaButton = (Button) findViewById(R.id.Area_button);
+        AreaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context,Convert_Area_Activity.class);

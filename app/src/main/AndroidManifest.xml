@@ -19,6 +19,10 @@
         <activity android:name=".Convert_Length_Activity"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".Convert_Area_Activity"
+            android:parentActivityName=".MainActivity">
+        </activity>
+
 
     </application>
 
